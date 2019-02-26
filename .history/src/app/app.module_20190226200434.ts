@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { MatFormFieldModule, MatInputModule, MatListModule} from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSortModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
@@ -63,7 +63,6 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     RouterModule.forRoot(
