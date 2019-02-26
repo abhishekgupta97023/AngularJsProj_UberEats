@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item>
+          <mat-icon matListIcon>favourites</mat-icon>
+          <h3 matLine> Your Favourites </h3>
+      </mat-list-item>
+
+      <mat-list-item>
+          <mat-icon matListIcon>payment</mat-icon>
+          <h3 matLine> Payment </h3>
+      </mat-list-item>
+      
+      <mat-list-item>
+          <mat-icon matListIcon>help</mat-icon>
+          <h3 matLine> Help </h3>
+      </mat-list-item>
+      
+      <mat-list-item>
+          <mat-icon matListIcon>promotions</mat-icon>
+          <h3 matLine> Promotions </h3>
+      </mat-list-item>
+      
+      <mat-list-item>
+          <mat-icon matListIcon>folder</mat-icon>
+          <h3 matLine> Delivery with Uber </h3>
+      </mat-list-item>
+      
+      <mat-list-item>
+          <mat-icon matListIcon>settings</mat-icon>
+          <h3 matLine> Settings </h3>
+      </mat-list-item>
+      
+      <a mat-list-item href="#">Your Favourites</a>
+      <a mat-list-item href="#">Payment</a>
+      <a mat-list-item href="#">Help</a>
+      <mat-icon md-svg-src="/android.svg" aria-label="android "></mat-icon>
+      <a mat-list-item href="#">Promotions</a>
+      <a mat-list-item href="#">Delivery with Uber</a>
+      <a mat-list-item href="#">Settings</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>UberEats</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

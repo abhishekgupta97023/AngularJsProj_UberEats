@@ -1,0 +1,80 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item routerLink='favorites' routerLinkActive="active">
+          <mat-icon matListIcon>favorite</mat-icon>
+          <h3 matLine> Your Favourites </h3>
+      </mat-list-item>
+
+      <mat-list-item routerLink='payment' routerLinkActive="active">
+          <mat-icon matListIcon>payment</mat-icon>
+          <h3 matLine> Payment </h3>
+      </mat-list-item>
+      
+      <mat-list-item routerLink='help' routerLinkActive="active">
+          <mat-icon matListIcon>help</mat-icon>
+          <h3 matLine> Help </h3>
+      </mat-list-item>
+      <mat-list-item routerLink='promotions' routerLinkActive="active">
+          <mat-icon matListIcon>local_offer</mat-icon>
+          <h3 matLine> Promotions </h3>
+      </mat-list-item>
+      
+      <mat-list-item routerLink='delivery'routerLinkActive="active" >
+          <mat-icon matListIcon>shopping_cart</mat-icon>
+          <h3 matLine> Delivery with Uber </h3>
+      </mat-list-item>
+      
+      <mat-list-item routerLink='settings'routerLinkActive="active">
+          <mat-icon matListIcon>settings</mat-icon>
+          <h3 matLine> Settings </h3>
+      </mat-list-item>
+<!--    
+      <a mat-list-item href="#">Your Favourites</a>
+      <a mat-list-item href="#">Payment</a>
+      <a mat-list-item href="#">Help</a>
+      <mat-icon md-svg-src="/android.svg" aria-label="android "></mat-icon>
+      <a mat-list-item href="#">Promotions</a>
+      <a mat-list-item href="#">Delivery with Uber</a>
+      <a mat-list-item href="#">Settings</a>
+       -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+         <!--
+          <mat-icon class="nav-icon">person</mat-icon>
+          <span class="nav-spacer"></span>
+          <mat-icon class="nav-icon">notifications</mat-icon>
+          <mat-icon class="nav-icon">apps</mat-icon>
+          <mat-icon class="nav-icon">fullscreen</mat-icon>
+          <mat-icon class="nav-icon">flag</mat-icon>
+          <mat-icon class="nav-icon">search</mat-icon>
+          <mat-icon class="nav-icon">account_circle</mat-icon> -->
+
+
+
+  
+    <!-- <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>UberEats</span>
+    </mat-toolbar>-->
+    <router-outlet> 
+
+    </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
